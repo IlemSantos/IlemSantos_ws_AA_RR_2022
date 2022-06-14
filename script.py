@@ -23,11 +23,11 @@ def run_process(args):
     return run_time
 
 
-with open('command_file.txt', 'r') as read_obj:
-    text_file = read_obj.read().split('\n')
-for command_line in text_file:
-    args = shlex.split(command_line)
-    # print(args)
-    average = analysis(args)
-    print(average)
-    print()
+for i in range(5):
+    for j in range(1000*pow(10, i), 10000*pow(10, i), 1000*pow(10, i)):
+        command_line = './arvoreRedBlack teste_' + str(j) + '.txt'
+        args = shlex.split(command_line)
+        # print(args)
+        average = analysis(args)
+        print(average)
+        print()
